@@ -11,7 +11,7 @@ import java.util.List;
 *    
 */
 public interface Subject {
-	List<Observer> observers=new ArrayList<Observer>();
+
 	boolean registerObserver(Observer observer);
 	boolean removeObserver(Observer observer);
 	void notifyObservers();

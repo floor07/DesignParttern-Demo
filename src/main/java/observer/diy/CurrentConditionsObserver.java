@@ -1,11 +1,11 @@
 package observer.diy;
 
+
 public class CurrentConditionsObserver implements Observer,DisplayElement {
 	private Double temperature;
 	private Double humidity;
 	private Double pressure;
 	private Subject weatherData;
-	
 	public CurrentConditionsObserver(Subject weatherData) {
 		this.weatherData = weatherData;
 		this.weatherData.registerObserver(this);

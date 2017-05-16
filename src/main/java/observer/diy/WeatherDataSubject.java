@@ -1,5 +1,7 @@
 package observer.diy;
 
+import java.util.ArrayList;
+import java.util.List;
 
 /**  
 * @ClassName: WeatherDataSubject <br/>
@@ -14,7 +16,7 @@ public class WeatherDataSubject implements Subject {
 	private Double temp;
 	private Double humidity;
 	private Double pressure;
-	
+	List<Observer> observers=new ArrayList<Observer>();
 	public void setMeasurements(Double temp,Double humidity,Double pressure){
 		this.temp=temp;
 		this.humidity=humidity;
