@@ -1,7 +1,5 @@
 package observer.diy;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**  
 * @ClassName: Subject <br/>
