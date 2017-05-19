@@ -3,8 +3,19 @@ package iterator;
 import java.util.ArrayList;
 
 public class PancakeHouseMenu {
-	private ArrayList<MenuItem> menuItems;
+	
+	public  class PancakeHouseMenuIterator implements MyIterator<MenuItem>{
+		public boolean hasNext() {
+			return position<menuItems.size();
+		}
 
+		public MenuItem next() {
+			return menuItems.get(position++);
+		}
+	}
+	
+	private ArrayList<MenuItem> menuItems;
+	int position=0;
 	public PancakeHouseMenu() {
 		this.menuItems = new ArrayList<MenuItem>();
 		addItem("K&B Pancake Breakfast",
@@ -34,4 +45,9 @@ public class PancakeHouseMenu {
 	public ArrayList<MenuItem> getMenuItems(){
 		return this.menuItems;
 	}
+	
+	public MyIterator<MenuItem> createIterator(){
+		return new PancakeHouseMenuIterator();
+	}
+
 }

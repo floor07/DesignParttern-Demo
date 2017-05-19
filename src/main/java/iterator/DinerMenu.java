@@ -1,6 +1,20 @@
 package iterator;
 
-public class DinerMenu implements MyIterator<MenuItem>{
+public class DinerMenu {
+	
+	public class DinerMenuIterator implements MyIterator<MenuItem>{
+
+		public boolean hasNext() {
+			
+			return position<MAX_ITEMS&&menuItems[position]!=null;
+		}
+
+		public MenuItem next() {
+			return menuItems[position++];
+		}
+		
+	}
+	
 	static final int MAX_ITEMS=6;
  	int numberOfItems=0;
  	MenuItem[]menuItems;
@@ -33,13 +47,9 @@ public class DinerMenu implements MyIterator<MenuItem>{
 		return menuItems;
 	}
 
-	public boolean hasNext() {
-		
-		return position<MAX_ITEMS&&menuItems[position]!=null;
+	public MyIterator<MenuItem> createIterator(){
+		return new DinerMenuIterator();
 	}
 
-	public MenuItem next() {
-		return menuItems[position++];
-	}
 
 }
