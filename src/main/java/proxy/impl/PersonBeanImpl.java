@@ -4,8 +4,6 @@ package proxy.impl;
 import proxy.PersonBean;
 
 public class PersonBeanImpl implements PersonBean{
-
-
 	
 	String name;
 	String gender;
