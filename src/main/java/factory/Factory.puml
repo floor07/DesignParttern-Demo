@@ -1,0 +1,30 @@
+@startuml
+abstract class PizzaStore{
+Pizza:orderPizza()
+{abstract}abstract Pizza: createPizza()
+}
+abstract class Pizza{
+String type
+void : prepare()
+void : bake()
+void : cut()
+void : box()
+}
+class NYPizzaStore
+class ChicagePizzaStore
+class NYChessePizza
+class  NYVeggiePizza
+class ChicageChessePizza
+class ChicageVeggiePizza
+Pizza <|--NYChessePizza
+Pizza <|--NYVeggiePizza
+Pizza <|--ChicageChessePizza
+Pizza <|--ChicageVeggiePizza
+PizzaStore<|--NYPizzaStore
+PizzaStore<|--ChicagePizzaStore
+PizzaStore-->Pizza
+NYPizzaStore-->NYChessePizza
+NYPizzaStore-->NYVeggiePizza
+ChicagePizzaStore-->ChicageChessePizza
+ChicagePizzaStore-->ChicageVeggiePizza
+@enduml

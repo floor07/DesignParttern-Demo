@@ -1,0 +1,23 @@
+@startuml
+class PizzaStore
+class SimplePizzaFactory{
+Pizza:createPizza()
+}
+abstract class Pizza{
+String type
+void : prepare()
+void : bake()
+void : cut()
+void : box()
+}
+class ChessePizza
+class PepperoniPizza
+class  VeggiePizza
+
+Pizza 	<|-- ChessePizza
+Pizza 	<|-- PepperoniPizza
+Pizza 	<|-- VeggiePizza
+
+SimplePizzaFactory --> Pizza
+PizzaStore -->SimplePizzaFactory
+@enduml
